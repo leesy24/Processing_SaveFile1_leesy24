@@ -12,7 +12,7 @@ int[] y = new int[0];
 
 void setup() 
 {
-  size(200, 200);
+  size(100, 100);
 }
 
 void draw() 
@@ -35,6 +35,11 @@ void draw()
 void mousePressed() { // Click to add a line segment
   x = append(x, mouseX);
   y = append(y, mouseY);
+  String[] lines = new String[x.length];
+  for (int i = 0; i < x.length; i++) {
+    lines[i] = x[i] + "\t" + y[i];
+  }
+  saveStrings("/tmp/positions.txt", lines);
 }
 
 void keyPressed() { // Press a key to save the data
@@ -42,6 +47,6 @@ void keyPressed() { // Press a key to save the data
   for (int i = 0; i < x.length; i++) {
     lines[i] = x[i] + "\t" + y[i];
   }
-  saveStrings("lines.txt", lines);
+  saveStrings("/tmp/positions.txt", lines);
   exit(); // Stop the program
 }
