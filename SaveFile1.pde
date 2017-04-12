@@ -12,7 +12,7 @@ int[] y = new int[0];
 
 void setup() 
 {
-  size(100, 100);
+  size(640, 480);
 }
 
 void draw() 
